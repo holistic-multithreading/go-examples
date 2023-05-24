@@ -5,37 +5,37 @@ import (
 )
 
 
-func BenchmarkSimpleSumThousand(b *testing.B) {
+func BenchmarkSingleThreadThousand(b *testing.B) {
 	for i := 0; i < b.N; i++ {
-		SumSimple(1000)
+		SumSingleThread(1000)
 	}
 }
 
-func BenchmarkSumMultithreadedThousand(b *testing.B) {
+func BenchmarkMultithreadedThousand(b *testing.B) {
 	for i := 0; i < b.N; i++ {
 		SumMultithreaded(1000)
 	}
 }
 
-func BenchmarkSimpleSumMillion(b *testing.B) {
+func BenchmarkSingleThreadMillion(b *testing.B) {
 	for i := 0; i < b.N; i++ {
-		SumSimple(1000000)
+		SumSingleThread(1000000)
 	}
 }
 
-func BenchmarkSumMultithreadedMillion(b *testing.B) {
+func BenchmarkMultithreadedMillion(b *testing.B) {
 	for i := 0; i < b.N; i++ {
 		SumMultithreaded(1000000)
 	}
 }
 
-func BenchmarkSimpleSumBillion(b *testing.B) {
+func BenchmarkSingleThreadBillion(b *testing.B) {
 	for i := 0; i < b.N; i++ {
-		SumSimple(1000000000)
+		SumSingleThread(1000000000)
 	}
 }
 
-func BenchmarkSumMultithreadedBillion(b *testing.B) {
+func BenchmarkMultithreadedBillion(b *testing.B) {
 	for i := 0; i < b.N; i++ {
 		SumMultithreaded(1000000000)
 	}

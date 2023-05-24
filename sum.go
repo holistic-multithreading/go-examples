@@ -7,14 +7,12 @@ import (
 )
 
 func main() {
-
-	// result := SumSimple(1000)
-	result := SumMultithreaded(1000)
+	result := SumMultithreaded(1000000)
 	fmt.Println(result)
 
 }
 
-func SumSimple(n int) int {
+func SumSingleThread(n int) int {
 	var res int
 	for i := 0; i <=n; i++ {
 		res += i
@@ -38,8 +36,7 @@ func SumMultithreaded(n int) int {
 			end := start + chunkSize
 			isLast := i + 1 == cpus
 			if isLast {
-				remaining := n - (chunkSize * cpus)
-				end += remaining
+				end = n
 			}
 
 			var curSum int
